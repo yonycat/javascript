@@ -1,0 +1,1 @@
+参考链接：http://www.infoq.com/cn/es6-in-depth/
