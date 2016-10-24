@@ -5,3 +5,4 @@ user = {
 	name:'alice',
 	age: 18
 }
+es6log(user)
