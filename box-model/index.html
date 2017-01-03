@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>盒模型</title>
+    <style>
+    #demo {
+        width: 100px;
+        height: 100px;
+        border: 100px solid red;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="demo"></div>
+</body>
+<script>
+var $div = document.querySelector('#demo');
+// 除去height,width;其余值都是相对于左上角的视口起始位置而言的
+var boundingClientRect = $div.getBoundingClientRect()
+</script>
+
+</html>
+<!--
+应用：可以用来做图片 lazy-load
+$(window)
+
+ -->
