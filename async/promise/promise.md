@@ -1,10 +1,13 @@
-###promise 对象
-#####promise 有三种状态
-1. Pending  Resolved  Rejected
-2.状态的转化只能是 ：Pending -> Resolved ; Pending -> Rejected
-状态一旦发生改变，就一直保持变化后的结果，添加的回调函数也可以被执行，而事件是不行的。
+### Promise 对象 
+<br>
+#### Promise 有三种状态 
+- Pending  Resolved  Rejected
+- 状态的转化只能是 ：Pending -> Resolved ; Pending -> Rejected
+- 状态一旦发生改变，就一直保持变化后的结果，添加的回调函数也可以被执行，而事件是不行的。
+4. Promise 一旦建立，就会立即执行，无法取消
 
-###promise 也可以返回另外的promise对象
+<br>
+### Promise 也可以返回另外的 Promise 对象
 ```javascript
 var p1 = new Promise(function (resolve, reject) {
   // ...
@@ -15,7 +18,7 @@ var p2 = new Promise(function (resolve, reject) {
   resolve(p1);
 })
 ```
-###promise.prototye.then
+### promise.prototye.then
 promise.then 方法返回的时一个新的promise实例(不是原来的那个promise实例),故可以采用链式写法;
 ```javascript
 var promise2 = new Promise((resolve, reject) => {
