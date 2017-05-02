@@ -11,7 +11,7 @@ var promise1 = new Promise((resolve, reject) => {
 
 promise1.then(p => {
 	console.log(p)
-	// catch 在 rejected 或者前面的方法流中报错后执行
+	// catch 在 reject 或者前面的方法流中报错后执行
 }).catch(() => {
 	console.log('erro or rejected')
 })

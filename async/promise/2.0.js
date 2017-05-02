@@ -8,8 +8,6 @@ var promise1 = new Promise((resolve, reject) => {
 	})), 1000)
 })
 
-
-
 function resolvePromise (info) {
 	console.log(info)
 	return new Promise((resolve, reject) => {

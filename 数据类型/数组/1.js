@@ -17,7 +17,7 @@ var x2Ary = ary.map(function(value, index, array) {
 })
 // console.log(x2Ary)
 
-// 4. forEach 
+// 4. forEach
 ary.forEach(function(value, index, ary) {
 	// console.log(`${index}: ${value}`)
 })
@@ -49,6 +49,7 @@ console.log(`${ary3}, ${sliceAry}`)
 // arrayObject.splice(index,howmany,item1,.....,itemX)
 var spliceAry = ary3.splice(0, 2)
 console.log(`${ary3}, ${spliceAry}`)
-// @todo 
+// @todo
 var spliceAry2 = [31, 32, 33].splice(0, 2, 11, 22)
 console.log(spliceAry2)
+
