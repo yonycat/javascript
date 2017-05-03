@@ -1,5 +1,6 @@
-var fs = require('fs')
+/*es2017标准引入的 async 函数*/
 
+var fs = require('fs')
 var readFile = function (filename) {
 	return new Promise(function (resolve, reject) {
 		fs.readFile(filename, function (err, data) {
@@ -20,14 +21,16 @@ var gen = function* () {
 }
 
 // 改进为：
+// async 表示函数里面有异步操作
 var asyncReadFile = async function () { 
+	// await 表示需要等待操作结果
 	var f1 = await readFile('/etc/fstab')
 	var f2 = await readFile('/etc/shells')
 	console.log(f1.toString())
 	console.log(f2.toString())
 }
-
-asyncReadFile()
+// async 函数返回的是 promise 对象
+console.log(asyncReadFile().catch(e => {console.log(e)}))
 
 /*
 1. async 函数的优点：

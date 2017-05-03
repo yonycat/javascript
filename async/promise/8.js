@@ -17,9 +17,10 @@ var p1 = new Promise((resolve, reject) => {
 Promise.prototype.finally = function (callback) {
 	let p = this.constructor
 	// 可以视情况确认是否要返回 Promise 对象 return this.then
+	// 应该要返回 return 原因是每个 promise 上的方法都返回了一个 Promise 对象
 	this.then(
 		value => p.resolve(callback()).then(() => value),
-		reaseon => p.reject(callback()).then(() => reason)
+		reason => p.reject(callback()).then(() => reason)
 	)
 }
 new Promise(resolve => resolve(1)).finally(() => {
