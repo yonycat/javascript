@@ -3,6 +3,7 @@
 await 命令使用注意点：
 	1. 最好把 await 命令包含在 try catch 中，或者 await 命令后的加catch 命令进行跟进
 	2. 如果两个 await 命令间不是继发关系，最好让他们同步执行
+	3. await 只能用于 async 函数中
 */
 
 // demo1
@@ -70,7 +71,8 @@ var namePromise = getName()
 var agePromise = getAge()
 
 var userDemo2 = {}
-
-userDemo2.age = await agePromise
-userDemo2.name = await namePromise
+// 这边报错，不知道为啥
+// 这边错的原因是 await 没有用在 async 函数中
+userDemo2.age = await agePromise;
+userDemo2.name = await namePromise;
 console.log(`userDemo2: ${userDemo2.age}, ${userDemo2.name}`)

@@ -33,6 +33,9 @@ async function asyncPrint (value = 'hello, world', ms = 1000) {
 	}
 }
 
+/*
+	1. then 只有 return 或者 里面的 await 函数全都 resolve 了才会执行
+*/
 asyncPrint().then(record => {
 	if (record) {
 		console.log(`done by ${record.ownerName} at ${record.timestamp}`)
@@ -55,8 +58,7 @@ console.log('在asyncPrint 之后，但是在他之前执行')
 /* 1. async 函数执行的返回值是一个 promise 对象
    2. async 函数返回的 Promise 对象，必须等到内部的所有 await 命令后面的 promise 执行完毕，才会发生状态改变
    3. 只有 async 函数内部的异步操作执行完，才会执行then方法指定的回调函数。
-	 4. 如果遇到 return 语句 或者 内部的 reject，会提前执行 then 语句
-	 5. 报错执行的是 catch 语句
+	 4. 如果遇到 return 语句，会提前执行 then 语句
 */
 
 
