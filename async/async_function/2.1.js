@@ -1,26 +1,37 @@
-function timeout (ms) {
-	return new Promise(resolve => {
-		setTimeout (resolve, ms)
-	})
+/* 实例1 */
+function timeout1 (ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('resolve in timeout1')
+    }, ms)
+  })
 }
-// async 函数本事返回的是一个promise 对象，这个async 函数的返回值，
-async function asyncPrint (value = 'hello, world', ms = 1000) {
-	// await后面需要跟的是一个 promise 对象， promise resolve 之后，后面的内容才会执行
-	await timeout(ms)
-	console.log(value)
-	return {
-		ownerName: '',
-		timestamp: Date.now
-	}
+
+function timeout2 (ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject('reject in timeout2')
+    }, ms)
+  })
 }
-// async 函数执行的返回值，会做 then 回调函数的参数
-asyncPrint().then(record => {
-	console.log('done by ${record.ownerName} at ${record.timestamp}')
+
+async function fetchSth () {
+  /*
+   1. 只有 await 后面的 是 resolve ,await 后面的语句才会执行
+  */
+  await timeout1(100)
+  console.log('await timeout1(100) 完成')
+  /*
+    1. await 后面的是 reject 会跳到  catch 部分
+    2. 且 await 后面的表达式不在被执行
+    3. 报错会跳转到 catch 部分
+  */
+  await timeout2(100) // 这边的 await reject， 后面的语句不被执行
+  console.log('await timeout2(100) 完成') 
+}
+
+fetchSth().then(data => {
+  console.log(`log in then: ${data}`)
+}).catch(err => {
+  console.log(`log in catch: ${err}`)
 })
-
-console.log('在asyncPrint 之后，但是在他之前执行')
-
-
-
-
-

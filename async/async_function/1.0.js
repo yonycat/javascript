@@ -22,7 +22,7 @@ var gen = function* () {
 
 // 改进为：
 // async 表示函数里面有异步操作
-var asyncReadFile = async function () { 
+var asyncReadFile = async function () {
 	// await 表示需要等待操作结果
 	var f1 = await readFile('/etc/fstab')
 	var f2 = await readFile('/etc/shells')
@@ -36,4 +36,7 @@ console.log(asyncReadFile().catch(e => {console.log(e)}))
 1. async 函数的优点：
 	1） 内置执行器，无需如 gennerator 那样调用 next
 	2) async 表示函数里面有异步操作，await 表示紧跟后面的表达式需要等待结果
+
+2. 进一步说： async 函数 可以看做多个异步操作，包装成的一个 Promise 对象， 而 await 命令就是内部 then 命令的语法糖
 */
+
