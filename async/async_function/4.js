@@ -13,3 +13,4 @@ let bar = getBar()
 let [foo, bar] = await Promise.all([getFoo(), getBar()])
 
 
+// @todo 缺少实例
