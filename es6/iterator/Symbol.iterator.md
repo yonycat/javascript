@@ -17,8 +17,8 @@ for (key of myIterable) {
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols
 
-notes:
-**The iterable protocol allows JavaScript objects to define or customize their iteration behavior, such as what values are looped over in a for..of construct. ** Some built-in types are built-in iterables with a default iteration behavior, such as Array or Map, while other types (such as Object) are not.
+Notice:
+**The iterable protocol allows JavaScript objects to define or customize their iteration behavior, such as what values are looped over in a for..of construct.** Some built-in types are built-in iterables with a default iteration behavior, such as Array or Map, while other types (such as Object) are not.
 
 In order to be iterable, an object must implement the @@iterator method, meaning that the object (or one of the objects up its prototype chain) must have a property with a @@iterator key which is available via constant Symbol.iterator:
 
