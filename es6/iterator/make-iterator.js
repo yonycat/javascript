@@ -1,9 +1,3 @@
-const it = makeIterator(['a', 'b'])
-
-it.next()
-it.next()
-it.next()
-
 function makeIterator(array) {
   let nextIndex = 0
   return {
@@ -17,4 +11,13 @@ function makeIterator(array) {
         : { value: undefined, done: true }
     },
   }
+}
+
+const it = makeIterator(['a', 'b'])
+
+let result = { done: false, value: undefined }
+
+while (result.done !== true) {
+  result = it.next()
+  console.log(result)
 }
