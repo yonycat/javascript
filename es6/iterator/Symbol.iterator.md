@@ -1,3 +1,20 @@
+-What is symbol?
+
+Symbol is a premitive data type imported in ES6. Usually, we use it to represent a **unique** value.
+
+A Symbol value is generated in this way
+
+```ts
+const s =
+  Symbol(/*
+   accepts string as parameter too. The string is a description to the symbol
+   */)
+typeof s
+s.toString()
+```
+
+- Symbol.iterator
+
 Symbol.iterator 为每一个对象定义了默认的迭代器。该迭代器可以被 for...of 循环结构使用。
 
 demo： self defined iterator
@@ -40,3 +57,7 @@ someString[Symbol.iterator] = function () {
   }
 }
 ```
+
+- Singleton using Symbol
+
+Reference: https://es6.ruanyifeng.com/#docs/symbol#%E5%AE%9E%E4%BE%8B%EF%BC%9A%E6%A8%A1%E5%9D%97%E7%9A%84-Singleton-%E6%A8%A1%E5%BC%8F
