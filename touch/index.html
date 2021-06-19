@@ -3,49 +3,51 @@
 
 <head>
     <title></title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <style type="text/css">
-    * {
-        margin: 0;
-        padding: 0;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-        padding-top: 1000px;
-        padding-bottom: 1000px;
-    }
+        body {
+            padding-top: 1000px;
+            padding-bottom: 1000px;
+        }
 
-    #demoDiv {
-        width: 100px;
-        height: 100px;
-        background: red;
-    }
+        #demoDiv {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
     </style>
 </head>
 
 <body>
-    <div id="demoDiv">
-    </div>
+    <div id="demoDiv"></div>
     <script type="text/javascript">
-    var oDiv = document.getElementById('demoDiv');
+        var oDiv = document.getElementById('demoDiv')
 
-    function log(e) {
-        console.log(Date.now())
-        console.log(e.type);
-        // console.log(e);
-    }
-    oDiv.addEventListener('touchstart', function(e) {
-        console.log(e.type);
-        log(e);
-        // e.preventDefault();会不触发 click 事件
-        // e.preventDefault();
-        // return false;
-    });
-    oDiv.addEventListener('touchmove', log);
-    oDiv.addEventListener('touchenter', log);
-    oDiv.addEventListener('touchend', log);
-    oDiv.addEventListener('toucheleave', log);
-    oDiv.addEventListener('click', log)
+        function log(e)
+        {
+            console.log(Date.now())
+            console.log(e.type)
+            // console.log(e);
+        }
+        oDiv.addEventListener('touchstart', function (e)
+        {
+            console.log(e.type)
+            log(e)
+            // e.preventDefault();会不触发 click 事件
+            // e.preventDefault();
+            // return false;
+        })
+        oDiv.addEventListener('touchmove', log)
+        oDiv.addEventListener('touchenter', log)
+        oDiv.addEventListener('touchend', log)
+        oDiv.addEventListener('toucheleave', log)
+        oDiv.addEventListener('click', log)
     </script>
 </body>
 

@@ -1,4 +1,4 @@
-function toJson () {
+function toJson() {
   return function (json) {
     let ctx = this
     ctx.type = 'application/json'

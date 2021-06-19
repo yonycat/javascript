@@ -15,22 +15,23 @@ var symbol2 = Symbol('symbol1')
 // 两者并不相等，即使传递的是相同的字符串
 console.log(symbol1 === symbol2)
 
-
 //2. 使用对象作为参数,会调用对象的toString 值进行转化
 var person = {
-	name: 'alice',
-	age: '永远18岁',
-	toString () {
-		return `${this.name}${this.age}`
-	}
+  name: 'alice',
+  age: '永远18岁',
+  toString() {
+    return `${this.name}${this.age}`
+  },
 }
 console.log(Symbol(person))
 
 // 3. Symbol 类型的值，不能和其他类型的值进行计算, 和 symbol 类型的值进行计算
 try {
-	symbol1 + 1
+  symbol1 + 1
 } catch (e) {
-	console.log('2. Symbol 类型的值，不能和其他类型的值进行计算, 和 symbol 类型的值进行计算')
+  console.log(
+    '2. Symbol 类型的值，不能和其他类型的值进行计算, 和 symbol 类型的值进行计算'
+  )
   // console.log(symbol1 + symbol2)
 }
 

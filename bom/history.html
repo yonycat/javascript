@@ -1,64 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Pushstate</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <style>
         body {
-            margin:0;
+            margin: 0;
         }
-        ul,li {
-            list-style: none
+
+        ul,
+        li {
+            list-style: none;
         }
+
         a {
-          display: block;
-          text-decoration: none;
-          border-bottom: 1px solid blue;
-          line-height: 44px;
+            display: block;
+            text-decoration: none;
+            border-bottom: 1px solid blue;
+            line-height: 44px;
         }
     </style>
 </head>
-<body>
-    <div id="navs"> <a href="history.html?1">1</a>
-    <a href="history.html?2">2</a>
-    <a href="history.html?3">3</a>
-    <a href="history.html?4">4</a>
-    <a href="history.html?5">5</a></div>
-    <div id="app"></div>
-<script>
-$(function() {
-    var history = window.history
-    var $aTags = $('a')
-    $aTags.on('click', function(e) {
-        let title = e.target.innerHTML
-        document.title = title
-        /*
-            state 对象,
-            title: title
-            url:  这个参数提供了新历史纪录的地址
-        */
-        history.pushState({
-            title: title
-            },
-            title,
-            location.href.split("?")[0] + "?" + title
-        )
-        e.preventDefault()
-    })
 
-    var location = window.location
-    var query = location.href.split('?')[1]
-    
-    window.addEventListener('popstate', function () {
-        let query = location.href.split('?')[1] || 'pushState'
-        document.title = query
-    })
-})
-</script>
+<body>
+    <div id="navs">
+        <a href="history.html?1">1</a>
+        <a href="history.html?2">2</a>
+        <a href="history.html?3">3</a>
+        <a href="history.html?4">4</a>
+        <a href="history.html?5">5</a>
+    </div>
+    <div id="app"></div>
+    <script>
+        $(function ()
+        {
+            var history = window.history
+            var $aTags = $('a')
+            $aTags.on('click', function (e)
+            {
+                let title = e.target.innerHTML
+                document.title = title
+                /*
+                  state 对象,
+                  title: title
+                  url:  这个参数提供了新历史纪录的地址
+              */
+                history.pushState(
+                    {
+                        title: title,
+                    },
+                    title,
+                    location.href.split('?')[0] + '?' + title
+                )
+                e.preventDefault()
+            })
+
+            var location = window.location
+            var query = location.href.split('?')[1]
+
+            window.addEventListener('popstate', function ()
+            {
+                let query = location.href.split('?')[1] || 'pushState'
+                document.title = query
+            })
+        })
+    </script>
 </body>
+
 </html>
 
 <!--

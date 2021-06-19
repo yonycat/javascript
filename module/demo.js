@@ -1,4 +1,5 @@
-(function () { 'use strict'
+;(function () {
+  'use strict'
   var createApp = function () {
     // ---------------------
     // 开始常用的应用代码
@@ -7,14 +8,14 @@
     return new Vue({
       template: '<div id="app">你已经在这花了 {{ counter }} 秒。</div>',
       data: {
-        counter: 0
+        counter: 0,
       },
       created: function () {
         var vm = this
         setInterval(function () {
           vm.counter += 1
         }, 1000)
-      }
+      },
     })
     // -------------------
     // 结束常用的应用代码
@@ -26,4 +27,4 @@
   } else {
     this.app = createApp()
   }
-}).call(this)
+}.call(this))

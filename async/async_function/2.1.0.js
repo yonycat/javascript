@@ -1,5 +1,5 @@
 /* 实例1 */
-function timeout1 (ms) {
+function timeout1(ms) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('resolve in timeout1')
@@ -7,7 +7,7 @@ function timeout1 (ms) {
   })
 }
 
-function timeout2 (ms) {
+function timeout2(ms) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       reject('reject in timeout2')
@@ -15,7 +15,7 @@ function timeout2 (ms) {
   })
 }
 
-async function fetchSth () {
+async function fetchSth() {
   /*
    1. 只有 await 后面的 是 resolve ,await 后面的语句才会执行
   */
@@ -28,7 +28,7 @@ async function fetchSth () {
     4. catch 里面的 err 会是 reject 的原因或者 报错的 Error 对象
   */
   await timeout2(100) // 这边的 await reject， 后面的语句不被执行
-  console.log('await timeout2(100) 完成') 
+  console.log('await timeout2(100) 完成')
 }
 
 /*
@@ -36,8 +36,10 @@ async function fetchSth () {
   的这一个步骤
   2. data 是 return 的值, 如果没有 return 值， data 是 undefined
 */
-fetchSth().then(data => {
-  console.log(`log in then: ${data}`)
-}).catch(err => {
-  console.log(`log in catch: ${err}`)
-})
+fetchSth()
+  .then((data) => {
+    console.log(`log in then: ${data}`)
+  })
+  .catch((err) => {
+    console.log(`log in catch: ${err}`)
+  })

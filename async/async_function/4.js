@@ -4,13 +4,12 @@
 	3. await 只能用在 async 函数中，不然会报错
  */
 
-function getFoo () {}
-function getBar () {}
+function getFoo() {}
+function getBar() {}
 
 let foo = await getFoo()
 let bar = getBar()
 
 let [foo, bar] = await Promise.all([getFoo(), getBar()])
-
 
 // @todo 缺少实例
