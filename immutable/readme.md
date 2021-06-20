@@ -1,6 +1,7 @@
 # Immutable
 
 - Official Doc(4.x): https://immutable-js.com/docs/#/
+- The quick way to learn immutable is by reading the documentation of [lodash](https://lodash.com/)
 
 ## Concepts and Key ideas
 
